@@ -62,10 +62,10 @@
       <v-btn size="x-large">X-Large</v-btn>
     </v-col>
   </v-row>
-  <v-row v-if="components.includes('Button Toggle')">
+  <v-row v-if="components.includes('Button Toggle') || components.includes('Content Switch')">
     <v-col cols="12">
       <div class="text-h4">
-        Button Toggle
+        Button Toggle / Content Switch
       </div>
       <v-btn-toggle v-model="toggleValue" mandatory>
         <v-btn value="left">
@@ -220,10 +220,10 @@
       <v-pagination v-model="page2" :length="5" total-visible="7"></v-pagination>
     </v-col>
   </v-row>
-  <v-row v-if="components.includes('Progress')">
+  <v-row v-if="components.includes('Progress') || components.includes('Inline Loading')">
     <v-col cols="12">
       <div class="text-h4">
-        Progress
+        Progress / Inline Loading
       </div>
       <v-progress-linear model-value="45"></v-progress-linear>
       <br />
@@ -231,6 +231,12 @@
       <br />
       <v-progress-circular model-value="60" color="primary"></v-progress-circular>
       <v-progress-circular indeterminate color="secondary"></v-progress-circular>
+      <br /><br />
+      <v-progress-circular indeterminate color="primary" size="20"></v-progress-circular>
+      <span style="margin-left: 8px;">Loading...</span>
+      <br /><br />
+      <v-progress-circular indeterminate color="secondary" size="24"></v-progress-circular>
+      <span style="margin-left: 8px;">Processing data...</span>
     </v-col>
   </v-row>
   <v-row v-if="components.includes('Radio')">
@@ -476,13 +482,9 @@ const treeviewItems = [
 const blueprint = {
   VBtn: {
     color: 'primary',
-    rounded: 0,
-  },
-  VCheckbox: {
-    color: 'secondary',
   },
   VSelect: {
-    variant: 'filled',
+    variant: 'outlined',
   },
   VSlider: {
     color: 'primary',
@@ -491,10 +493,10 @@ const blueprint = {
     color: 'primary',
   },
   VTextarea: {
-    variant: 'filled',
+    variant: 'outlined',
   },
   VTextField: {
-    variant: 'filled',
+    variant: 'outlined',
   },
 }
 </script>
